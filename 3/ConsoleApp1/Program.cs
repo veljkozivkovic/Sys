@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using ConsoleApp1.Services;
+using System;
+class Program
+{
+    static void Main(string[] args)
+    {
+        NewsService newsService = new NewsService();
+
+        
+    }
+}
