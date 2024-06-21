@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Reactive": {
               "target": "Package",
               "version": "[6.0.1, )"

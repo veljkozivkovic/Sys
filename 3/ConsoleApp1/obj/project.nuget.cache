@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "J+8LZSIKLzbZtAOtyISIw1FTT1dfVdtONC7V7PCAoqgXRj7nn1HHOmnNOg6Ob/tTOzbd3etDU01piLJzSSjo3w==",
+  "dgSpecHash": "3obWMDI9brvZ98d87mN1hMGlGnZJzOW0aokt0XraaFg6jlX4c3hXFwD+Tl09p/UlFkfSsW0qzj0Uq5VddulM7g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\korisnik\\Desktop\\repo\\elfak\\SysProg\\3\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\korisnik\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\korisnik\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
     "C:\\Users\\korisnik\\.nuget\\packages\\system.reactive.core\\6.0.1\\system.reactive.core.6.0.1.nupkg.sha512",
     "C:\\Users\\korisnik\\.nuget\\packages\\system.reactive.interfaces\\6.0.1\\system.reactive.interfaces.6.0.1.nupkg.sha512",
