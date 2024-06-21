@@ -1,0 +1,134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|c:\\users\\korisnik\\desktop\\github\\elfak\\sysprog\\2\\weatherapi\\services\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:services\\handler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\lfucache\\lfucache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:lfucache\\lfucache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\utils\\weatherutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:utils\\weatherutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\lfucache\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:lfucache\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\lfucache\\dlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA150EC7-85CA-4D16-96F1-DC01AF85DE2C}|WeatherAPI.csproj|solutionrelative:lfucache\\dlinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Node.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\Node.cs",
+              "RelativeDocumentMoniker": "LFUCache\\Node.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\Node.cs",
+              "RelativeToolTip": "LFUCache\\Node.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Handler.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Services\\Handler.cs",
+              "RelativeDocumentMoniker": "Services\\Handler.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Services\\Handler.cs",
+              "RelativeToolTip": "Services\\Handler.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAQwEsAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApiService.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Services\\ApiService.cs",
+              "RelativeDocumentMoniker": "Services\\ApiService.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Services\\ApiService.cs",
+              "RelativeToolTip": "Services\\ApiService.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAgwBoAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherUtil.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Utils\\WeatherUtil.cs",
+              "RelativeDocumentMoniker": "Utils\\WeatherUtil.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Utils\\WeatherUtil.cs",
+              "RelativeToolTip": "Utils\\WeatherUtil.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.601Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAiwCQAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LFUCache.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\LFUCache.cs",
+              "RelativeDocumentMoniker": "LFUCache\\LFUCache.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\LFUCache.cs",
+              "RelativeToolTip": "LFUCache\\LFUCache.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAIwEAAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DLinkedList.cs",
+              "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\DLinkedList.cs",
+              "RelativeDocumentMoniker": "LFUCache\\DLinkedList.cs",
+              "ToolTip": "C:\\Users\\korisnik\\Desktop\\GitHub\\elfak\\SysProg\\2\\WeatherAPI\\LFUCache\\DLinkedList.cs",
+              "RelativeToolTip": "LFUCache\\DLinkedList.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBsAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T21:44:23.599Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
