@@ -33,7 +33,8 @@ namespace ConsoleApp1.Services
         public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword)
         {
             var encodedKeyword = Uri.EscapeDataString(keyword);
-            var response = await httpClient.GetAsync($"{newsApiUrl}?q={encodedKeyword}&sortBy=publishedAt&apiKey={apiKey}").ConfigureAwait(false);
+            string url = $"{newsApiUrl}?q={encodedKeyword}&sortBy=publishedAt&apiKey={apiKey}";
+            var response = await httpClient.GetAsync(url).ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
