@@ -21,6 +21,13 @@ namespace ConsoleApp1.Services
         //        Observable.FromAsync(() => FetchReposAsync(topic)).SelectMany(repos => repos));
         //    return observables.Merge().SubscribeOn(new EventLoopScheduler()).ObserveOn(new EventLoopScheduler());
         //}
+        //public IObservable<Article> GetRelatedArticles(string keywords)
+        //{
+        //    var observables = keywords.Select(keyword =>
+        //        Observable.FromAsync(() => FetchArticlesAsync(keywords)).SelectMany(articles => articles));
+
+        //    return observables.Merge().SubscribeOn(new EventLoopScheduler()).ObserveOn(new EventLoopScheduler());
+        //}
 
 
         public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword)
@@ -33,7 +40,7 @@ namespace ConsoleApp1.Services
 
             var articles = jsonResponse["articles"];
 
-            if(articles != null)
+            if (articles != null)
             {
                 return articles.Select(article => new Article(
                     new Source(
@@ -54,5 +61,63 @@ namespace ConsoleApp1.Services
                 return Enumerable.Empty<Article>();
             }
         }
+
+
+
+
+            //    public IObservable<Article> RetrieveArticlesByKeywords(string keywords)
+            //{
+            //    // Pretvaranje skupa ključnih reči u Observable sekvencu
+            //    var keywordObservable = keywords.ToObservable();
+
+            //    // Dohvaćanje članaka za svaku ključnu reč i ravnanje rezultata u jednu sekvencu
+            //    var articleObservable = keywordObservable.SelectMany(keyword =>
+            //        Observable.FromAsync(async () =>
+            //        {
+            //            var response = await httpClient.GetAsync($"{newsApiUrl}?q={keyword}&sortBy=publishedAt&apiKey={apiKey}");
+            //            response.EnsureSuccessStatusCode();
+
+            //            var responseBody = await response.Content.ReadAsStringAsync();
+            //            var jsonResponse = JObject.Parse(responseBody);
+
+            //            var articles = jsonResponse["articles"];
+            //            return articles != null
+            //                ? articles.Select(article => new Article(
+            //                    new Source(
+            //                        article["source"]?["id"]?.ToString(),
+            //                        article["source"]?["name"]?.ToString()
+            //                    ),
+            //                    article["author"]?.ToString(),
+            //                    article["title"]?.ToString(),
+            //                    article["description"]?.ToString(),
+            //                    article["url"]?.ToString(),
+            //                    article["urlToImage"]?.ToString(),
+            //                    DateTime.TryParse(article["publishedAt"]?.ToString(), out var publishedAt) ? publishedAt : DateTime.MinValue,
+            //                    article["content"]?.ToString()
+            //                )).ToList()
+            //                : new List<Article>();
+            //        }).SelectMany(articles => articles.ToObservable())
+            //    );
+
+            //    // Vraćanje Observable sekvence članaka sa specificiranim SubscribeOn i ObserveOn schedulerima
+            //    return articleObservable.SubscribeOn(TaskPoolScheduler.Default).ObserveOn(TaskPoolScheduler.Default);
+            //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 }

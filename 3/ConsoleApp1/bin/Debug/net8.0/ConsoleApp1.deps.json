@@ -9,7 +9,10 @@
       "ConsoleApp1/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.3",
+<<<<<<< HEAD
           "SentimentAnalyzer": "1.2.3",
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
           "System.Reactive": "6.0.1",
           "System.Reactive.Core": "6.0.1",
           "System.Reactive.Interfaces": "6.0.1",
@@ -20,6 +23,7 @@
           "ConsoleApp1.dll": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.ML/1.5.5": {
         "dependencies": {
           "Microsoft.ML.CpuMath": "1.5.5",
@@ -106,6 +110,8 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -114,6 +120,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "SentimentAnalyzer/1.2.3": {
         "dependencies": {
           "Microsoft.ML": "1.5.5"
@@ -144,6 +151,8 @@
         }
       },
       "System.Memory/4.5.3": {},
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
       "System.Reactive/6.0.1": {
         "runtime": {
           "lib/net6.0/System.Reactive.dll": {
@@ -200,6 +209,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "System.Reflection/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -252,6 +262,8 @@
           "System.Runtime": "4.3.0"
         }
       },
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
       "System.Threading.Tasks.Extensions/4.5.4": {}
     }
   },
@@ -261,6 +273,7 @@
       "serviceable": false,
       "sha512": ""
     },
+<<<<<<< HEAD
     "Microsoft.ML/1.5.5": {
       "type": "package",
       "serviceable": true,
@@ -296,6 +309,8 @@
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
     },
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
     "Newtonsoft.Json/13.0.3": {
       "type": "package",
       "serviceable": true,
@@ -303,6 +318,7 @@
       "path": "newtonsoft.json/13.0.3",
       "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
     },
+<<<<<<< HEAD
     "SentimentAnalyzer/1.2.3": {
       "type": "package",
       "serviceable": true,
@@ -338,6 +354,8 @@
       "path": "system.memory/4.5.3",
       "hashPath": "system.memory.4.5.3.nupkg.sha512"
     },
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
     "System.Reactive/6.0.1": {
       "type": "package",
       "serviceable": true,
@@ -373,6 +391,7 @@
       "path": "system.reactive.platformservices/6.0.1",
       "hashPath": "system.reactive.platformservices.6.0.1.nupkg.sha512"
     },
+<<<<<<< HEAD
     "System.Reflection/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -429,6 +448,8 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
+=======
+>>>>>>> 713fba34ccb1973d20ced61c7238c1ff11a8856d
     "System.Threading.Tasks.Extensions/4.5.4": {
       "type": "package",
       "serviceable": true,
