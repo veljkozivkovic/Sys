@@ -95,7 +95,7 @@ namespace ConsoleApp1.Server
                 _subscription.Dispose(); // Otkazivanje pretplate
                 _subscription = null; // Resetovanje _subscription na null
                 _listener.Stop(); // Zaustavljanje HttpListener-a
-                Console.WriteLine("Server stopped.");
+                Console.WriteLine("\nServer stopped.");
             }
         }
 
