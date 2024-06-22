@@ -26,7 +26,7 @@ namespace ConsoleApp1.Observers
 
         public void OnNext(Article article)
         {
-            Console.WriteLine($"{name}: Naslov: {article.Title} , Content: {article.Content}, Source: {article.Source.Name}");
+            Console.WriteLine($"{name}: Naslov: {article.Title} \n Content: {article.Content}\n Source: {article.Source.Name}\n Prediction:{article.Prediction} , Score:{article.Score}");
             Console.WriteLine("-------------------------------------------------");
         }
     }

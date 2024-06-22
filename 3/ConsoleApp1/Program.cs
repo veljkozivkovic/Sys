@@ -1,6 +1,7 @@
 
 ﻿using ConsoleApp1.Observers;
 using ConsoleApp1.Services;
+using SentimentAnalyzer;
 using System;
 class Program
 {
@@ -17,10 +18,18 @@ class Program
 
         await articleStream.GetArticles("bitcoin");
 
+
+        
+
         Console.ReadLine();
+
+
+        
 
         subscription1.Dispose();
         subscription2.Dispose();
+
+
 
 
 

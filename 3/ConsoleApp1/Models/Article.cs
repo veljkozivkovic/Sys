@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1.Models
+﻿using SentimentAnalyzer;
+
+namespace ConsoleApp1.Models
 {
     public class Article
     {
@@ -10,6 +12,10 @@
         public string UrlToImage { get; set; }
         public DateTime PublishedAt { get; set; }
         public string Content { get; set; }
+        
+        public bool Prediction { get; set; }
+
+        public float Score { get; set; }
 
         public Article(Source s, string author, string title, string des, string url, string urlToImg, DateTime published, string content)
         {
@@ -21,6 +27,8 @@
             UrlToImage = urlToImg;
             PublishedAt = published;
             Content = content;
+            Prediction = Sentiments.Predict(des).Prediction;
+            Score = Sentiments.Predict(des).Score;
         }
     }
 }
