@@ -39,11 +39,9 @@ namespace ConsoleApp1.Client
 
             try
             {
-<<<<<<< HEAD
+
                 var response = await client.GetStringAsync($"http://localhost:5050/?keyword={Uri.EscapeDataString(keyword)}");
-=======
-                var response = await client.GetStringAsync($"http://localhost:5000/?keyword={Uri.EscapeDataString(keyword)}");
->>>>>>> 2dcaa3bd9286a2818bf394350f0ba0bc8c94a88e
+
                 return JsonConvert.DeserializeObject<List<Article>>(response);
             }
             catch (HttpRequestException e)

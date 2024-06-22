@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj": {}
+    "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj": {
+    "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj",
+        "projectUniqueName": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj",
         "projectName": "ConsoleApp2",
-        "projectPath": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj",
-        "packagesPath": "C:\\Users\\korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp2\\obj\\",
+        "projectPath": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp2\\ConsoleApp2.csproj",
+        "packagesPath": "C:\\Users\\Tomislav\\.nuget\\packages\\",
+        "outputPath": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tomislav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
