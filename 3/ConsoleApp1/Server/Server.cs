@@ -16,8 +16,8 @@ namespace ConsoleApp1.Server
 {
     public class Server
     {
-        private const int Port = 10889;
-        private readonly string[] _prefixes = { $"http://localhost:{Port}/", $"http://127.0.0.1:{Port}/" };
+        private const int Port = 5050;
+        private readonly string[] _prefixes = { $"http://localhost:{Port}/" };
 
         private readonly HttpListener _listener = new();
         private readonly NewsService _NewsService;

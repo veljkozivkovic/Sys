@@ -20,7 +20,7 @@ namespace ConsoleApp1.Client
                 Console.WriteLine($"Found {articles.Count} articles for keyword '{keyword}':");
                 foreach (var article in articles)
                 {
-                    Console.WriteLine($"- {article.Title}: {article.Content}\n Source: {article.Source.Name}\n Prediction: {article.Prediction} , Score: {article.Score}");
+                    Console.WriteLine($"- Title: {article.Title}\n {article.Content}\n Source: {article.Source.Name}\n Prediction: {article.Prediction} , Score: {article.Score}");
                     Console.WriteLine("-------------------------------------------------");
                 }
             }
@@ -39,7 +39,7 @@ namespace ConsoleApp1.Client
 
             try
             {
-                var response = await client.GetStringAsync($"http://localhost:10889/?keyword={Uri.EscapeDataString(keyword)}");
+                var response = await client.GetStringAsync($"http://localhost:5050/?keyword={Uri.EscapeDataString(keyword)}");
                 return JsonConvert.DeserializeObject<List<Article>>(response);
             }
             catch (HttpRequestException e)

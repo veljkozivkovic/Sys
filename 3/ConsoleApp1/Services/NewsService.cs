@@ -33,35 +33,46 @@ namespace ConsoleApp1.Services
         public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword)
         {
             var encodedKeyword = Uri.EscapeDataString(keyword);
-            var response = await httpClient.GetAsync($"{newsApiUrl}?q={encodedKeyword}&sortBy=publishedAt&apiKey={apiKey}").ConfigureAwait(false);
-            response.EnsureSuccessStatusCode();
+            var url = $"{newsApiUrl}?q={encodedKeyword}&language=en&apiKey={apiKey}";
 
-            var responseBody = await response.Content.ReadAsStringAsync();
-            var jsonResponse = JObject.Parse(responseBody);
-
-            var articles = jsonResponse["articles"];
-
-            if (articles != null)
+            using (var request = new HttpRequestMessage(HttpMethod.Get, url))
             {
-                return articles
-                    .Where(article => article["source"]?["name"]?.ToString() != "[Removed]")
-                    .Select(article => new Article(
-                        new Source(
-                            article["source"]?["id"]?.ToString(),
-                            article["source"]?["name"]?.ToString()
-                        ),
-                        article["author"]?.ToString(),
-                        article["title"]?.ToString(),
-                        article["description"]?.ToString(),
-                        article["url"]?.ToString(),
-                        article["urlToImage"]?.ToString(),
-                        DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), //ako nema publishedAt, vrati DateTime.MinValue
-                        article["content"]?.ToString()
-                    ));
-            }
-            else
-            {
-                return Enumerable.Empty<Article>();
+                request.Headers.Add("User-Agent", "FaksProba");
+
+                var response = await httpClient.SendAsync(request).ConfigureAwait(false);
+                if (!response.IsSuccessStatusCode)
+                {
+                    // Log or handle the error as needed
+                    return null;
+                }
+
+                var responseBody = await response.Content.ReadAsStringAsync();
+                var jsonResponse = JObject.Parse(responseBody);
+
+                var articles = jsonResponse["articles"];
+
+                if (articles != null)
+                {
+                    return articles
+                        .Where(article => article["source"]?["name"]?.ToString() != "[Removed]")
+                        .Select(article => new Article(
+                            new Source(
+                                article["source"]?["id"]?.ToString(),
+                                article["source"]?["name"]?.ToString()
+                            ),
+                            article["author"]?.ToString(),
+                            article["title"]?.ToString(),
+                            article["description"]?.ToString(),
+                            article["url"]?.ToString(),
+                            article["urlToImage"]?.ToString(),
+                            DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), //ako nema publishedAt, vrati DateTime.MinValue
+                            article["content"]?.ToString()
+                        ));
+                }
+                else
+                {
+                    return Enumerable.Empty<Article>();
+                }
             }
         }
     
