@@ -32,7 +32,8 @@ namespace ConsoleApp1.Services
 
         public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword)
         {
-            var response = await httpClient.GetAsync($"{newsApiUrl}?q={keyword}&sortBy=publishedAt&apiKey={apiKey}");
+            var encodedKeyword = Uri.EscapeDataString(keyword);
+            var response = await httpClient.GetAsync($"{newsApiUrl}?q={encodedKeyword}&sortBy=publishedAt&apiKey={apiKey}").ConfigureAwait(false);
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -42,25 +43,28 @@ namespace ConsoleApp1.Services
 
             if (articles != null)
             {
-                return articles.Select(article => new Article(
-                    new Source(
-                        article["source"]?["id"]?.ToString(),
-                        article["source"]?["name"]?.ToString()
-                    ),
-                    article["author"]?.ToString(),
-                    article["title"]?.ToString(),
-                    article["description"]?.ToString(),
-                    article["url"]?.ToString(),
-                    article["urlToImage"]?.ToString(),
-                    DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), //ako nema publishedAt, vrati DateTime.MinValue
-                    article["content"]?.ToString()
-                ));
+                return articles
+                    .Where(article => article["source"]?["name"]?.ToString() != "[Removed]")
+                    .Select(article => new Article(
+                        new Source(
+                            article["source"]?["id"]?.ToString(),
+                            article["source"]?["name"]?.ToString()
+                        ),
+                        article["author"]?.ToString(),
+                        article["title"]?.ToString(),
+                        article["description"]?.ToString(),
+                        article["url"]?.ToString(),
+                        article["urlToImage"]?.ToString(),
+                        DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), //ako nema publishedAt, vrati DateTime.MinValue
+                        article["content"]?.ToString()
+                    ));
             }
             else
             {
                 return Enumerable.Empty<Article>();
             }
         }
+    
 
 
 
