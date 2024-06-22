@@ -25,10 +25,9 @@ namespace ConsoleApp1.Server
 
         public Server(NewsService NewsService)
         {
-            foreach (var prefix in _prefixes)
-            {
-                _listener.Prefixes.Add(prefix);
-            }
+            
+               _listener.Prefixes.Add(_prefix);
+            
 
             _NewsService = NewsService;
             _listener.Start();
