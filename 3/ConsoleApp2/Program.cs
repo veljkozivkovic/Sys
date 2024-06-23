@@ -12,25 +12,25 @@ public class Program
         static async Task Main(string[] args)
         {
             Console.WriteLine("Enter a keyword to search for articles:");
-            var keyword = Console.ReadLine();
+           // var keyword = Console.ReadLine();
 
             Console.WriteLine("Enter sort option (0: relevancy, 1: popularity, 2: publishedAt):");
-            if (!int.TryParse(Console.ReadLine(), out int sortOption))
-            {
-                sortOption = 0; // Default to relevancy if input is invalid
-            }
-            await FetchAndPrintArticlesAsync(keyword, sortOption);
+            // if (!int.TryParse(Console.ReadLine(), out int sortOption))
+            //  {
+            //     sortOption = 0; // Default to relevancy if input is invalid
+            //  }
+            // await FetchAndPrintArticlesAsync(keyword, sortOption);
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             // Keywords to search for concurrently
-            var keywords = new List<string> { "technology", "sports", "politics", "health", "entertainment" };
+            var keywords = new List<string> { "technology" };//, "sports", "politics", "health", "entertainment", "bitcoin", "entertainment", "entertainment", "entertainment" };
 
             // List of threads for concurrent execution
             List<Thread> threads = new List<Thread>();
 
             foreach (var kw in keywords)
             {
-                var thread = new Thread(() => FetchAndPrintArticlesAsync(kw, sortOption).GetAwaiter().GetResult());
+                var thread = new Thread(() => FetchAndPrintArticlesAsync(kw, 0).GetAwaiter().GetResult());
                 thread.Start();
                 threads.Add(thread);
             }
