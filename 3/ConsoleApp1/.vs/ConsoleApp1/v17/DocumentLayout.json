@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\observers\\articlestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:observers\\articlestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -51,8 +51,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T14:33:44.84Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -94,7 +93,7 @@
               "RelativeDocumentMoniker": "Server\\Server.cs",
               "ToolTip": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\Server\\Server.cs",
               "RelativeToolTip": "Server\\Server.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAIwGEAAAAlAAAA",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAswH4AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-22T12:58:58.314Z",
               "EditorCaption": ""
@@ -107,9 +106,10 @@
               "RelativeDocumentMoniker": "Observers\\ArticleStream.cs",
               "ToolTip": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\Observers\\ArticleStream.cs",
               "RelativeToolTip": "Observers\\ArticleStream.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:24:53.42Z"
+              "WhenOpened": "2024-06-22T10:24:53.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -125,15 +125,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "NewsService.cs",
               "DocumentMoniker": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\Services\\NewsService.cs",
               "RelativeDocumentMoniker": "Services\\NewsService.cs",
               "ToolTip": "C:\\Users\\korisnik\\Desktop\\repo\\Sys\\3\\ConsoleApp1\\Services\\NewsService.cs",
               "RelativeToolTip": "Services\\NewsService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAADwvyEAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-21T16:05:02.845Z"
+              "WhenOpened": "2024-06-21T16:05:02.845Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",

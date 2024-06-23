@@ -40,53 +40,95 @@ namespace ConsoleApp1.Server
                 return;
 
             _subscription = Observable.Create<HttpListenerContext>(obs =>
+            {
+                return Observable.FromAsync(() =>
                 {
-                    return Observable.FromAsync(() => _listener.GetContextAsync())
-                        .Repeat()
-                        .TakeWhile(_ => _listener.IsListening)
-                        .Subscribe(obs.OnNext, obs.OnError, obs.OnCompleted);
+                    Console.WriteLine($"GetContextAsync called on thread {Thread.CurrentThread.ManagedThreadId}");
+                    return _listener.GetContextAsync();
                 })
-                .SubscribeOn(NewThreadScheduler.Default) // Obrada inicijalne pretplate na novoj niti
-                .ObserveOn(TaskPoolScheduler.Default) // Obrada svakog zahteva na zasebnoj niti iz pool-a
-                .SelectMany(context =>
-                    Observable.FromAsync(async () =>
+                .Repeat()
+                .TakeWhile(_ => _listener.IsListening)
+                .Subscribe(obs.OnNext, obs.OnError, obs.OnCompleted);
+            })
+            .SubscribeOn(NewThreadScheduler.Default) // Obrada inicijalne pretplate na novoj niti
+            .Do(_ => Console.WriteLine($"Subscribed on thread {Thread.CurrentThread.ManagedThreadId}"))
+            .ObserveOn(TaskPoolScheduler.Default) // Obrada svakog zahteva na zasebnoj niti iz pool-a
+            .Do(_ => Console.WriteLine($"Observed on thread {Thread.CurrentThread.ManagedThreadId}"))
+            .SelectMany(context =>
+                Observable.FromAsync(async () =>
+                {
+                    try
                     {
-                        try
-                        {
-                            // Pretpostavimo da keyword dolazi iz URL-a
-                            var keyword = HttpUtility.ParseQueryString(context.Request.Url.Query).Get("keyword");
-                            if (string.IsNullOrEmpty(keyword))
-                            {
-                                context.Response.StatusCode = 400; // Bad Request
-                                context.Response.Close();
-                                return (null, null); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali
-                            }
+                        // Pretpostavimo da keyword i sortOption dolaze iz URL-a
+                        var queryString = HttpUtility.ParseQueryString(context.Request.Url.Query);
+                        var keyword = queryString.Get("keyword");
+                        var sortOptionStr = queryString.Get("sortOption");
+                        Console.WriteLine($"Processing request on thread {Thread.CurrentThread.ManagedThreadId} for keyword '{keyword}' with sort option '{sortOptionStr}'");
 
-                            var articles = await _NewsService.FetchArticlesAsync(keyword);
-                            return (context, articles);
-                        }
-                        catch (Exception ex)
+                        if (string.IsNullOrEmpty(keyword))
                         {
-                            Console.WriteLine($"Error processing request: {ex.Message}");
-                            context.Response.StatusCode = 500; // Internal Server Error
-                            context.Response.Close();
-                            return (null, null); // U slučaju greške, vraćamo null vrednosti
+                            var response = context.Response;
+                            var errorMessage = "Nevalidan upit.";
+                            var buffer = Encoding.UTF8.GetBytes(errorMessage);
+                            response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
+                            response.StatusCode = 400; // Bad Request
+                            response.ContentLength64 = buffer.Length;
+                            await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                            response.Close();
+                            return (null, null); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali
                         }
-                    }))
-                .Where(result => result.Item1 != null && result.Item2 != null) // Filtriramo null vrednosti
-                .Subscribe(result =>
-                {
-                    var (context, articles) = result;
-                    var response = context.Response;
-                    var buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(articles));
-                    response.ContentLength64 = buffer.Length;
-                    response.OutputStream.Write(buffer, 0, buffer.Length);
-                    response.Close();
-                }, error =>
-                {
-                    Console.WriteLine($"Error: {error.Message}");
-                });
+
+                        // Parsiranje sortOption parametra
+                        int sortOption = 0; // Default to relevancy
+                        if (!string.IsNullOrEmpty(sortOptionStr) && int.TryParse(sortOptionStr, out int parsedSortOption))
+                        {
+                            sortOption = parsedSortOption;
+                        }
+
+                        var articles = await _NewsService.FetchArticlesAsync(keyword, sortOption);
+                        if (articles == null || !articles.Any())
+                        {
+                            var response = context.Response;
+                            var errorMessage = $"Članci sa ključnom rečju '{keyword}' ne postoje.";
+                            var buffer = Encoding.UTF8.GetBytes(errorMessage);
+                            response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
+                            response.StatusCode = 404; // Not Found
+                            response.ContentLength64 = buffer.Length;
+                            await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                            response.Close();
+                            return (null, null); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali
+                        }
+
+                        return (context, articles);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error processing request: {ex.Message} on thread {Thread.CurrentThread.ManagedThreadId}");
+                        context.Response.StatusCode = 500; // Internal Server Error
+                        context.Response.Close();
+                        return (null, null); // U slučaju greške, vraćamo null vrednosti
+                    }
+                }))
+            .Where(result => result.Item1 != null && result.Item2 != null) // Filtriramo null vrednosti
+            .Subscribe(result =>
+            {
+                var (context, articles) = result;
+                Console.WriteLine($"Sending response on thread {Thread.CurrentThread.ManagedThreadId}");
+                var response = context.Response;
+                var buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(articles));
+                response.ContentType = "application/json; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
+                response.ContentLength64 = buffer.Length;
+                response.OutputStream.Write(buffer, 0, buffer.Length);
+                response.Close();
+            }, error =>
+            {
+                Console.WriteLine($"Error: {error.Message} on thread {Thread.CurrentThread.ManagedThreadId}");
+            });
         }
+
+
+
+
 
         public void Stop()
         {

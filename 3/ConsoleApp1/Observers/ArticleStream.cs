@@ -18,7 +18,7 @@ namespace ConsoleApp1.Observers
         {
             try
             {
-                var articles = await newsService.FetchArticlesAsync(keyword);
+                var articles = await newsService.FetchArticlesAsync(keyword,0);
                 foreach (var article in articles)
                 {
                     articleSubject.OnNext(article);

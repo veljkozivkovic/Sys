@@ -30,10 +30,19 @@ namespace ConsoleApp1.Services
         //}
 
 
-        public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword)
+        public async Task<IEnumerable<Article>?> FetchArticlesAsync(string keyword, int sortOption)
         {
+            // Mapiranje sortOption vrednosti na sortBy parametar
+            string sortBy = sortOption switch
+            {
+                // i 0 ukazuje na relevancy
+                1 => "popularity",  // Sortiranje po popularnosti
+                2 => "publishedAt", // Sortiranje po datumu objave
+                _ => "relevancy"  // Default : Sortiranje po relevantnosti
+            };
+
             var encodedKeyword = Uri.EscapeDataString(keyword);
-            var url = $"{newsApiUrl}?q={encodedKeyword}&language=en&apiKey={apiKey}";
+            var url = $"{newsApiUrl}?q={encodedKeyword}&language=en&sortBy={sortBy}&apiKey={apiKey}";
 
             using (var request = new HttpRequestMessage(HttpMethod.Get, url))
             {
@@ -65,7 +74,7 @@ namespace ConsoleApp1.Services
                             article["description"]?.ToString(),
                             article["url"]?.ToString(),
                             article["urlToImage"]?.ToString(),
-                            DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), //ako nema publishedAt, vrati DateTime.MinValue
+                            DateTime.Parse(article["publishedAt"]?.ToString() ?? DateTime.MinValue.ToString()), // ako nema publishedAt, vrati DateTime.MinValue
                             article["content"]?.ToString()
                         ));
                 }
@@ -75,53 +84,48 @@ namespace ConsoleApp1.Services
                 }
             }
         }
-    
-
-
-
-
-            //    public IObservable<Article> RetrieveArticlesByKeywords(string keywords)
-            //{
-            //    // Pretvaranje skupa ključnih reči u Observable sekvencu
-            //    var keywordObservable = keywords.ToObservable();
-
-            //    // Dohvaćanje članaka za svaku ključnu reč i ravnanje rezultata u jednu sekvencu
-            //    var articleObservable = keywordObservable.SelectMany(keyword =>
-            //        Observable.FromAsync(async () =>
-            //        {
-            //            var response = await httpClient.GetAsync($"{newsApiUrl}?q={keyword}&sortBy=publishedAt&apiKey={apiKey}");
-            //            response.EnsureSuccessStatusCode();
-
-            //            var responseBody = await response.Content.ReadAsStringAsync();
-            //            var jsonResponse = JObject.Parse(responseBody);
-
-            //            var articles = jsonResponse["articles"];
-            //            return articles != null
-            //                ? articles.Select(article => new Article(
-            //                    new Source(
-            //                        article["source"]?["id"]?.ToString(),
-            //                        article["source"]?["name"]?.ToString()
-            //                    ),
-            //                    article["author"]?.ToString(),
-            //                    article["title"]?.ToString(),
-            //                    article["description"]?.ToString(),
-            //                    article["url"]?.ToString(),
-            //                    article["urlToImage"]?.ToString(),
-            //                    DateTime.TryParse(article["publishedAt"]?.ToString(), out var publishedAt) ? publishedAt : DateTime.MinValue,
-            //                    article["content"]?.ToString()
-            //                )).ToList()
-            //                : new List<Article>();
-            //        }).SelectMany(articles => articles.ToObservable())
-            //    );
-
-            //    // Vraćanje Observable sekvence članaka sa specificiranim SubscribeOn i ObserveOn schedulerima
-            //    return articleObservable.SubscribeOn(TaskPoolScheduler.Default).ObserveOn(TaskPoolScheduler.Default);
-            //}
 
 
 
 
 
+        //    public IObservable<Article> RetrieveArticlesByKeywords(string keywords)
+        //{
+        //    // Pretvaranje skupa ključnih reči u Observable sekvencu
+        //    var keywordObservable = keywords.ToObservable();
+
+        //    // Dohvaćanje članaka za svaku ključnu reč i ravnanje rezultata u jednu sekvencu
+        //    var articleObservable = keywordObservable.SelectMany(keyword =>
+        //        Observable.FromAsync(async () =>
+        //        {
+        //            var response = await httpClient.GetAsync($"{newsApiUrl}?q={keyword}&sortBy=publishedAt&apiKey={apiKey}");
+        //            response.EnsureSuccessStatusCode();
+
+        //            var responseBody = await response.Content.ReadAsStringAsync();
+        //            var jsonResponse = JObject.Parse(responseBody);
+
+        //            var articles = jsonResponse["articles"];
+        //            return articles != null
+        //                ? articles.Select(article => new Article(
+        //                    new Source(
+        //                        article["source"]?["id"]?.ToString(),
+        //                        article["source"]?["name"]?.ToString()
+        //                    ),
+        //                    article["author"]?.ToString(),
+        //                    article["title"]?.ToString(),
+        //                    article["description"]?.ToString(),
+        //                    article["url"]?.ToString(),
+        //                    article["urlToImage"]?.ToString(),
+        //                    DateTime.TryParse(article["publishedAt"]?.ToString(), out var publishedAt) ? publishedAt : DateTime.MinValue,
+        //                    article["content"]?.ToString()
+        //                )).ToList()
+        //                : new List<Article>();
+        //        }).SelectMany(articles => articles.ToObservable())
+        //    );
+
+        //    // Vraćanje Observable sekvence članaka sa specificiranim SubscribeOn i ObserveOn schedulerima
+        //    return articleObservable.SubscribeOn(TaskPoolScheduler.Default).ObserveOn(TaskPoolScheduler.Default);
+        //}
 
 
 
@@ -133,6 +137,11 @@ namespace ConsoleApp1.Services
 
 
 
-        
+
+
+
+
+
+
     }
 }
