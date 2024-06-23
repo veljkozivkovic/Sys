@@ -19,6 +19,7 @@ public class Program
             {
                 sortOption = 0; // Default to relevancy if input is invalid
             }
+            await FetchAndPrintArticlesAsync(keyword, sortOption);
 
             Thread.Sleep(2000);
             // Keywords to search for concurrently
