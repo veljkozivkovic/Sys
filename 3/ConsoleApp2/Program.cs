@@ -54,7 +54,8 @@ public class Program
                 Console.WriteLine($"Found {articles.Count} articles for keyword '{keyword}':");
                 foreach (var article in articles)
                 {
-                    Console.WriteLine($"- Title: {article.Title}\n  Description: {article.Description}\n  URL: {article.Url}\n  URL to Image: {article.UrlToImage}\n  Published At: {article.PublishedAt}\n  Content: {article.Content}\n  Source: {article.Source.Name}\n  Prediction: {article.Prediction}, Score: {article.Score}");
+                    var prediction = article.Prediction == "true" ? "Positive" : "Negative";
+                    Console.WriteLine($"- Title: {article.Title}\n  Description: {article.Description}\n  URL: {article.Url}\n  URL to Image: {article.UrlToImage}\n  Published At: {article.PublishedAt}\n  Content: {article.Content}\n  Source: {article.Source.Name}\n  Prediction: {prediction}, Score: {article.Score}");
                     Console.WriteLine("-------------------------------------------------");
                 }
                 Console.WriteLine("====================================");
