@@ -14,7 +14,7 @@ namespace WeatherAPI.Utils
 
             try
             {
-                if (result.ContainsKey("error"))
+                if (result == null || result.ContainsKey("error"))
                 {
                     return "Upit nije dobro poslat";
                 }

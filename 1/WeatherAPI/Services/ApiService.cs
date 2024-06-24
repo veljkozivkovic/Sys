@@ -31,7 +31,10 @@ namespace WeatherAPI.Services
                 string url = $"{baseUrl}?key={apiKey}&q={query}&days={day}&aqi=yes&alerts=no&lang=sr";
                 var response = client.GetAsync(url).Result;
                 var resBody = response.Content.ReadAsStringAsync().Result;
-                return JObject.Parse(resBody);
+                if(response.IsSuccessStatusCode)
+                    return JObject.Parse(resBody);
+                else
+                    return null;
             }
             catch (Exception e)
             {

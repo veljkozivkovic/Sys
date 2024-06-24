@@ -7,28 +7,28 @@
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:services\\newsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\observers\\articleobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:observers\\articleobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|d:\\faks\\3.godina\\sys\\projekti\\sys\\3\\consoleapp1\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\observers\\articlestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:observers\\articlestream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\observers\\articleobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:observers\\articleobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\models\\source.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:models\\source.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|d:\\faks\\3.godina\\sys\\projekti\\sys\\3\\consoleapp1\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CDE9DA0F-258A-4868-A76D-C336C415CE43}|ConsoleApp1.csproj|solutionrelative:models\\article.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +38,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -51,6 +51,19 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T14:33:44.84Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Server.cs",
+              "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Server\\Server.cs",
+              "RelativeDocumentMoniker": "Server\\Server.cs",
+              "ToolTip": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Server\\Server.cs",
+              "RelativeToolTip": "Server\\Server.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAQwD8AAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T12:58:58.314Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -64,10 +77,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
@@ -76,7 +85,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Source.cs",
               "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Models\\Source.cs",
               "RelativeDocumentMoniker": "Models\\Source.cs",
@@ -84,21 +93,7 @@
               "RelativeToolTip": "Models\\Source.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T14:21:24.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Server.cs",
-              "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Server\\Server.cs",
-              "RelativeDocumentMoniker": "Server\\Server.cs",
-              "ToolTip": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Server\\Server.cs",
-              "RelativeToolTip": "Server\\Server.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAowDkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T12:58:58.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T14:21:24.971Z"
             },
             {
               "$type": "Document",
@@ -110,21 +105,19 @@
               "RelativeToolTip": "Observers\\ArticleStream.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:24:53.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T10:24:53.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ArticleObserver.cs",
               "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Observers\\ArticleObserver.cs",
               "RelativeDocumentMoniker": "Observers\\ArticleObserver.cs",
               "ToolTip": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Observers\\ArticleObserver.cs",
               "RelativeToolTip": "Observers\\ArticleObserver.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-22T10:12:14.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-22T10:12:14.238Z"
             },
             {
               "$type": "Document",
@@ -134,20 +127,20 @@
               "RelativeDocumentMoniker": "Services\\NewsService.cs",
               "ToolTip": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Services\\NewsService.cs",
               "RelativeToolTip": "Services\\NewsService.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAUwDwAAAA4AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T16:05:02.845Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Article.cs",
               "DocumentMoniker": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Models\\Article.cs",
               "RelativeDocumentMoniker": "Models\\Article.cs",
               "ToolTip": "D:\\Faks\\3.Godina\\SYS\\Projekti\\Sys\\3\\ConsoleApp1\\Models\\Article.cs",
               "RelativeToolTip": "Models\\Article.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAGAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAA9wB8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T15:59:58.373Z"
             }

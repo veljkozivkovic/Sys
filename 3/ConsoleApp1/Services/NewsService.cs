@@ -9,7 +9,10 @@ namespace ConsoleApp1.Services
 {
     public class NewsService
     {
-        private const string apiKey = "99b5f9e0a8014cc1811f616cda0380fb";
+        private const string apiKey = "0796d3f80fa147d1beb194cbd0cbc6e5";
+
+        //0796d3f80fa147d1beb194cbd0cbc6e5
+        //99b5f9e0a8014cc1811f616cda0380fb
         private const string newsApiUrl = "https://newsapi.org/v2/everything";
         private HttpClient httpClient { get; } = new();
 

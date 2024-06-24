@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Reactive.Concurrency;
 using System.Reactive.Linq;
+using System.Reactive.Threading.Tasks;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -26,7 +27,7 @@ namespace ConsoleApp1.Server
         public Server(NewsService NewsService)
         {
             
-               _listener.Prefixes.Add(_prefix);
+            _listener.Prefixes.Add(_prefix);
             
 
             _NewsService = NewsService;
@@ -52,69 +53,79 @@ namespace ConsoleApp1.Server
                 .Do(_ => Console.WriteLine($"Subscribed on thread {Thread.CurrentThread.ManagedThreadId}"))
                 .ObserveOn(TaskPoolScheduler.Default) // Obrada svakog zahteva na zasebnoj niti iz pool-a
                 .SelectMany(context =>
-                    Observable.FromAsync(async () =>
-                    {
-                        var stopwatch = Stopwatch.StartNew(); // Početak merenja vremena
-
-                        try
+                    Observable.Return(context)
+                    .ObserveOn(TaskPoolScheduler.Default) // Dodeli novu nit pre asinhronog poziva
+                    .SelectMany(ctx =>
+                        Observable.FromAsync(async () =>
                         {
-                            // Pretpostavimo da keyword i sortOption dolaze iz URL-a
-                            var queryString = HttpUtility.ParseQueryString(context.Request.Url.Query);
-                            var keyword = queryString.Get("keyword");
-                            var sortOptionStr = queryString.Get("sortOption");
-                            Console.WriteLine($"Processing request on thread {Thread.CurrentThread.ManagedThreadId} for keyword '{keyword}' with sort option '{sortOptionStr}'");
+                            var stopwatch = Stopwatch.StartNew(); // Početak merenja vremena
 
-                            if (string.IsNullOrEmpty(keyword))
+                            try
                             {
-                                var response = context.Response;
-                                var errorMessage = "Nevalidan upit.";
-                                var buffer = Encoding.UTF8.GetBytes(errorMessage);
-                                response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
-                                response.StatusCode = 400; // Bad Request
-                                response.ContentLength64 = buffer.Length;
-                                await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
-                                response.Close();
-                                return (null, null, 0); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali i vreme obrade 0
-                            }
+                                // Pretpostavimo da keyword i sortOption dolaze iz URL-a
+                                var queryString = HttpUtility.ParseQueryString(ctx.Request.Url.Query);
+                                var keyword = queryString.Get("keyword");
+                                var sortOptionStr = queryString.Get("sortOption");
+                                Console.WriteLine($"Processing request on thread {Thread.CurrentThread.ManagedThreadId} for keyword '{keyword}' with sort option '{sortOptionStr}'");
 
-                            // Parsiranje sortOption parametra
-                            int sortOption = 0; // Default to relevancy
-                            if (!string.IsNullOrEmpty(sortOptionStr) && int.TryParse(sortOptionStr, out int parsedSortOption))
+                                if (string.IsNullOrEmpty(keyword))
+                                {
+                                    var response = ctx.Response;
+                                    var errorMessage = "Nevalidan upit.";
+                                    var buffer = Encoding.UTF8.GetBytes(errorMessage);
+                                    response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
+                                    response.StatusCode = 400; // Bad Request
+                                    response.ContentLength64 = buffer.Length;
+                                    await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                                    response.Close();
+                                    return (null, null, 0); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali i vreme obrade 0
+                                }
+
+                                // Parsiranje sortOption parametra
+                                int sortOption = 0; // Default to relevancy
+                                if (!string.IsNullOrEmpty(sortOptionStr) && int.TryParse(sortOptionStr, out int parsedSortOption))
+                                {
+                                    sortOption = parsedSortOption;
+                                }
+
+                                
+
+                                var articles = await _NewsService.FetchArticlesAsync(keyword, sortOption);
+
+                                
+
+                                stopwatch.Stop();
+                                var elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+
+                                if (articles == null || !articles.Any())
+                                {
+                                    var response = ctx.Response;
+                                    var errorMessage = $"Članci sa ključnom rečju '{keyword}' ne postoje.";
+                                    var buffer = Encoding.UTF8.GetBytes(errorMessage);
+                                    response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
+                                    response.StatusCode = 404; // Not Found
+                                    response.ContentLength64 = buffer.Length;
+                                    await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
+                                    response.Close();
+                                    return (null, null, elapsedMilliseconds); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali i vreme obrade
+                                }
+
+                                
+
+                                return (ctx, articles, elapsedMilliseconds);
+                            }
+                            catch (Exception ex)
                             {
-                                sortOption = parsedSortOption;
+                                Console.WriteLine($"Error processing request: {ex.Message} on thread {Thread.CurrentThread.ManagedThreadId}");
+                                ctx.Response.StatusCode = 500; // Internal Server Error
+                                ctx.Response.Close();
+                                return (null, null, 0); // U slučaju greške, vraćamo null vrednosti i vreme obrade 0
                             }
-
-                            // Obezbedi da se FetchArticlesAsync izvršava na različitim nitima
-                            var articles = await  _NewsService.FetchArticlesAsync(keyword, sortOption);
-
-                            stopwatch.Stop();
-                            var elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
-
-                            if (articles == null || !articles.Any())
-                            {
-                                var response = context.Response;
-                                var errorMessage = $"Članci sa ključnom rečju '{keyword}' ne postoje.";
-                                var buffer = Encoding.UTF8.GetBytes(errorMessage);
-                                response.ContentType = "text/plain; charset=utf-8"; // Postavljamo Content-Type sa UTF-8 kodiranjem
-                                response.StatusCode = 404; // Not Found
-                                response.ContentLength64 = buffer.Length;
-                                await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
-                                response.Close();
-                                return (null, null, elapsedMilliseconds); // Vraćamo null vrednosti kako bismo ih kasnije filtrirali i vreme obrade
-                            }
-
-                            return (context, articles, elapsedMilliseconds);
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine($"Error processing request: {ex.Message} on thread {Thread.CurrentThread.ManagedThreadId}");
-                            context.Response.StatusCode = 500; // Internal Server Error
-                            context.Response.Close();
-                            return (null, null, 0); // U slučaju greške, vraćamo null vrednosti i vreme obrade 0
-                        }
-                    }))
+                        })
+                        .ObserveOn(TaskPoolScheduler.Default) // Dodajemo ObserveOn ovde kako bismo osigurali da se svaki korak obrade dešava na različitim nitima iz pool-a
+                    )
+                )
                 .Where(result => result.Item1 != null && result.Item2 != null) // Filtriramo null vrednosti
-                .SubscribeOn(NewThreadScheduler.Default) // Obrada inicijalne pretplate na novoj niti
                 .Subscribe(result =>
                 {
                     var (context, articles, elapsedMilliseconds) = result;
@@ -134,6 +145,9 @@ namespace ConsoleApp1.Server
             .ObserveOn(TaskPoolScheduler.Default) // Obrada svakog zahteva na zasebnoj niti iz pool-a
             .Subscribe();
         }
+
+
+
 
 
 
